@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: personal-management-api
+
+  web:
+    resources:
+      add-mappings: false
+
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/personal_management
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+server:
+  port: 8088
+
+logging:
+  level:
+    org.springframework.data.r2dbc: DEBUG
+    io.asyncer.r2dbc: DEBUG # Específico para el driver r2dbc-mysql de io.asyncer
+    org.springframework: INFO
+    com.personal.management: DEBUG
